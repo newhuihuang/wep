@@ -43,10 +43,10 @@
             <!--滚动图片begin-->
             <div class="pro_big2" id="pro_big">
               <div class="content_timglt">
-                <div class="content_timglt" id="bid">
+                  
                   <img src="uploadimages/products/1.jpg" class="big_img" />
                 </div>
-                <div class="content_timglt" style="position: absolute; left: 0; top: 0">
+                  
                   <div id="drag_img"></div>
                 </div>
               </div>
@@ -226,12 +226,28 @@
 <!--产品咨询 弹窗begin-->
 <div class="feedback_bgs"></div>
 <div class="feedback_box">
-  <div class="feedback_con" style="max-width:700px;margin:0 auto;">
+  <div class="feedback_con" style="max-width:400px;margin:0 auto;">
     <img src="images/lianxifangshi1.jpg" alt="电话咨询/微信扫码" style="width:100%;display:block;border-radius:6px;">
   </div>
   <span class="feedback_box_close"><a href="javascript:;">×</a></span>
 </div>
-<!--产品咨询 弹窗end-->
+<script language="javascript">
+// 打开弹窗（复用你原来的函数）
+function showfeedback(){
+    $(".feedback_bgs").fadeIn();
+    $(".feedback_box").addClass("showdiv");
+    $(".touch_bg").slideUp();
+    $(".top_ico").removeClass("on");
+    $("body").addClass("pos");
+}
+// 关闭弹窗（点击×或遮罩）
+$(".feedback_box_close,.feedback_bgs").on('click',function(){
+    $(".feedback_bgs").fadeOut();
+    $(".feedback_box").removeClass("showdiv");
+    $("body").removeClass("pos");
+});
+</script>
+
 <script type="text/javascript" src="js/product.js" charset="utf-8"></script>
 <script type="text/javascript" src="js/javascript2.js" charset="utf-8"></script>
 <script type="text/javascript" src="js/index.js" charset="utf-8"></script>
@@ -243,4 +259,5 @@ AOS.init({
 });
 </script>
 </body>
+
 </html>
