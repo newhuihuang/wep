@@ -1,0 +1,205 @@
+.layer-bg {
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: #000;
+    display: none;
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80);
+    opacity: 0.8;
+}
+.layer-box {
+    position: fixed;
+    z-index: 120;
+    top: 20%;
+    left: 50%;
+    padding: 40px 0;
+    margin-left: -320px;
+    width: 640px;
+    background-color: #fff;
+    border-top: 0px #005EB8 solid;
+    border-radius: 6px;
+    display: none;
+}
+
+.layer-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 30px;
+    height: 30px;
+    font-size: 16px;
+    text-align: center;
+    line-height: 30px;
+    color: #999;
+    cursor: pointer;
+}
+.layer-close:hover {
+    color: #000;
+}
+
+.layer-feeback{
+  width: 100%;
+}
+.ContactForm{}
+.ContactForm .Box{padding:0 0% 0% 4%; display: block; font-size:0; }
+.ContactForm .form{ padding:0px 0 0px; }
+.ContactForm .form>*{ display:inline-block; }
+.ContactForm .lw-w-6{ width:46.9%; }
+.ContactForm .lw-w-6:nth-child(2n+2){ margin-left:2%; }
+.ContactForm .tip{ font-size: 16px; line-height: 22px; color:#333;}
+.ContactForm .tip .i{ color:#dd0000; display:none; }
+.ContactForm .error .tip .i{ display:inline-block; }
+.ContactForm .input{ display: block; width: 93%;line-height: 30px;padding:1% 1%;margin:10px 0 10px;background-color:#F8F8F8; font-size: 14px;color:#333;}
+
+.ContactForm .form .other {
+  padding-top: 10px;
+  font-size: 14px;
+  line-height: 1.4em;
+  color: #333;
+}
+.ContactForm .form .other .btn-box {
+  margin-top: 0px;
+  text-align: left;
+}
+.ContactForm .form .other .btn-box .check-box {
+  position: relative;
+}
+.ContactForm .form .other .btn-box .check-box .check-btn {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+.ContactForm .form .other .btn-box .check-box .check-btn:checked + .self-svg {
+  background: #005EB8;
+}
+.ContactForm .form .other .btn-box .check-box .self-svg {
+  margin-right: 10px;
+  width: 14px;
+  height: 14px;
+  border: 1px solid #005EB8;
+  background: #ffffff;
+  cursor: pointer;
+  vertical-align: text-top;
+}
+.ContactForm .form .other .btn-box .check-box .self-svg svg {
+  width: 70%;
+  height: 70%;
+  fill: #ffffff;
+}
+
+.ContactForm .submit{display:block;margin:0 auto;width:196px;height: 40px;line-height: 40px;border-radius:20px;text-align:center; background-color: #005EB8; font-size: 16px; color:#fff; cursor:pointer;}
+.ContactForm .submit:hover{ background-color: #0E89D6; }
+.lw-w-6{ width:50%; }
+.lw-sw-12{ width:100%; }
+.lw-w-12{ width:100%; }
+@media only screen and (max-width: 1440px) {
+  .ContactForm .form .other {
+    /* padding-top: 30px; */
+    font-size: 16px;
+  }
+  .ContactForm .form .other .btn-box {
+    /* margin-top: 20px; */
+  }
+  .ContactForm .form .other .btn-box .check-box .self-svg {
+    margin-right: 7px;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .ContactForm .form .other {
+    padding-top: 0.3rem;
+    font-size: 0.26rem;
+  }
+  .ContactForm .form .other .btn-box {
+    margin-top: 0.15rem;
+  }
+  .ContactForm .form .other .btn-box .check-box .self-svg {
+    margin-right: 0.5em;
+  }
+}
+@media screen and (max-width: 1024px){
+  .layer-box{
+    top:15%;
+  }
+  .ContactForm{width:97%;padding-left: 3%;}
+  .ContactForm .Box{ padding:4% 0% 0% 0%; display: block; font-size:0;}
+  .ContactForm .lw-w-6{ width:47.9%; }
+  .ContactForm .input{ width: 97%;}
+
+  .ContactForm .form .other .btn-box {
+    line-height: 1.2;
+  }
+  .ContactForm .form .other .btn-box .check-box .self-svg {
+      margin-right: 1em;
+  }
+  .ContactForm .form .other {
+      padding-top: 0rem;
+      font-size: 14px;
+  }
+}
+@media screen and (max-width: 820px) {
+  .ContactForm .form .other .btn-box .check-box .self-svg {
+      width: 13px;
+  }
+}
+@media (max-width: 640px){
+  .layer-box {
+      top: 10%;
+      left: 5%;
+      padding: 40px 0;
+      margin-left: -0px;
+      width: 90%;
+  }
+  .ContactForm .form .other .btn-box {
+      margin-top: 0rem;
+      line-height: 2.2;
+  }
+  .ContactForm .form .other .btn-box .check-box .self-svg {
+      width: 15px;
+      height: 13px;
+  }
+}
+@media (max-width: 414px){
+  .amap-container {
+      height: 400px;
+  }
+  .contactInformation ul li {
+    font-size: 16px;
+  }
+  .contactInformation .partner .ul .li {
+      margin: 30px 0 15px 0px;
+  }
+  .contactInformation .partner .ul .box {
+      border-radius: 20px;
+  }
+  .contactInformation .partner .ul .info .con {
+      top: 23%;
+  }
+  .contactInformation .partner .ul .info .text {
+      font-size: 22px;
+      margin-top: 20px;
+  }
+  .contactInformation .partner .ul .info .con .link {
+      font-size: 14px;
+      margin-top: 10px;
+  }
+  .contactInformation .integrityReport .ul .box {
+      border-radius: 20px;
+  }
+  .contactInformation .integrityReport .ul .info .con {
+      top: 23%;
+  }
+  .contactInformation .integrityReport .ul .info .text {
+      font-size: 22px;
+      margin-top: 20px;
+  }
+  .contactInformation .integrityReport .ul .info .con .link {
+      font-size: 14px;
+      margin-top: 10px;
+  }
+}

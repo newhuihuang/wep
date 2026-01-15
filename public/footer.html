@@ -1,0 +1,76 @@
+<footer class="footer">
+    <p class="return">回到顶部<span class="glyphicon glyphicon-menu-up"></span></p>
+    <ul id="accordion" class="accordion">
+        <li>
+            <div class="link">服务案例<i class="glyphicon glyphicon-menu-right"></i></div>
+        </li>
+        <li>
+            <div class="link">产品中心<i class="glyphicon glyphicon-menu-right"></i></div>
+        </li>
+        <li>
+            <div class="link">媒体中心<i class="glyphicon glyphicon-menu-right"></i></div>
+        </li>
+        <li>
+            <div class="link"><a href="operating_center.html" style="color: #a5a5a5;">运营中心</a></div>
+        </li>
+        <li>
+            <div class="link">服务与支持<i class="glyphicon glyphicon-menu-right"></i></div>
+        </li>
+        <li>
+            <div class="link"><a href="about_us.html" style="color: #a5a5a5;">关于我们</a></div>
+        </li>
+    </ul>
+    <div class="footer_qrcode">
+        <img src="img/weixin_qrcode.png" alt="" />
+        <p>
+            <a>关注公众号</a>
+            <a>了解更多资讯</a>
+        </p>
+        <hr />
+        <span>© 2012-2020 版权所有</span>
+        <span>****科技有限公司<a style="color: #ffffff" href="http://www.beian.miit.gov.cn" target="_blank">&nbsp;&nbsp;沪ICP备16004537号-1</a></span>
+    </div>
+</footer>
+<script type="text/javascript">
+    $(function() {
+        var Accordion = function(el, multiple) {
+            this.el = el || {};
+            this.multiple = multiple || false;
+            var links = this.el.find('.link');
+            links.on('click', {el: this.el, multiple: this.multiple}, this.dropdown)
+        }
+        Accordion.prototype.dropdown = function(e) {
+            var $el = e.data.el;
+                $this = $(this),
+                $next = $this.next();
+            $next.slideToggle();
+            $this.parent().toggleClass('open');
+            if (!e.data.multiple) {
+                $el.find('.submenu').not($next).slideUp().parent().removeClass('open');
+            };
+        }    
+        var accordion = new Accordion($('#accordion'), false);
+    });
+    //滑动高度监测
+    var scrollTop;
+    var timer = null;
+    //监测当前屏幕高度
+    window.onscroll = function() {
+        scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+        return scrollTop;
+    }
+    //点击返回顶部
+    $('.return').click(function(){
+        clearInterval(timer);
+        timer = setInterval(function() {
+            var now = scrollTop;
+            var speed = (0 - now) / 10;
+            speed = speed > 0 ? Math.ceil(speed) : Math.floor(speed);
+            if(scrollTop == 0) {
+                clearInterval(timer);
+            }
+            document.documentElement.scrollTop = scrollTop + speed;
+            document.body.scrollTop = scrollTop + speed;
+        }, 35)
+    })
+</script>

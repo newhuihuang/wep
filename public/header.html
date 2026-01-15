@@ -1,0 +1,32 @@
+<div class="head">
+  <img src="img/logo.png" class="logo" alt=""/>
+  <div class="wrapper">
+      <nav><img src="img/logo.png" class="logos" alt=""/>
+          <div id="drop">
+              <div>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+              </div>
+          </div>
+      </nav>
+      <ul>
+          <li><a href="index.html">首页</a></li>
+          <li><a href="service_case.html">服务案例</a></li>
+          <li><a href="product_center.html">产品中心</a></li>
+          <li><a href="media_center.html">媒体中心</a></li>
+          <li><a href="operating_center.html">运营中心</a></li>
+          <li><a href="service_and_support.html">服务与支持</a></li>
+          <li><a href="about_us.html">关于我们</a></li>
+      </ul>
+  </div>
+</div>
+<script type="text/javascript">
+  $('#drop, nav ~ ul li').click(function() {
+    $('nav, #drop span').toggleClass('open');
+    $(window).scrollTop(0);
+  });
+  $('#drop>div').click(function(){
+      $('.logos').toggleClass('blo')
+  })
+</script>

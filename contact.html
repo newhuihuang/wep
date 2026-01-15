@@ -1,0 +1,255 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no">
+<title>民用电池类,储能电源类,3C电子类,园林工具类,数码影音类,家用电器类-深圳乐能创新</title>
+<meta name="keywords" content="乐能创新,民用电池类,储能电源类,3C电子类,园林工具类,数码影音类,家用电器类" />
+<meta name="description" content="乐能成立于2012年，是一家综合性的跨境企业。经过十余年的精心经营和稳健发展，乐能已成长为集产品设计研发、在线零售、B2B贸易、海外物流仓储四大版块为一体的跨境企业." />
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="renderer" content="webkit" />
+<meta name="screen-orientation" content="portrait" />
+<meta name="x5-orientation" content="portrait" />
+<meta name="format-detection" content="telephone=no,email=no,adress=no" >
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta name="author" content="www.szlepower.com">
+<link rel="shortcut icon" href="favicon.ico" />
+<link rel="stylesheet" href="css/style.css" />
+<script type="text/javascript" src="js/jquery-1.8.3.min.js" charset="utf-8"></script>
+<script type="text/javascript" src="js/swiper.min.js" charset="utf-8"></script>
+<script type="text/javascript" src="js/aos.js" charset="utf-8"></script>
+</head>
+<body>
+
+<!--头部start-->
+<div id="header"></div>
+<!--头部end-->
+
+<!-- 主体内容 start-->
+<div class="pbanner">
+  <div class="pbanner_big">
+    <img class="image pc" src="uploadimages/banner/contactUs_pc.jpg" width="100%" alt="Image">
+    <img class="image phone" src="uploadimages/banner/contactUs_mb.jpg" width="100%" alt="Image">
+  </div>
+  <!-- <div class="cons">
+    <div class="wrap">
+      <h2 class="h2">
+        <span>
+          <em class="fs30">联系我们</em>
+          <label class="fs20">关注金辉煌新能源，便于访客掌握最新信息动态</label>
+        </span>
+      </h2>
+    </div>
+  </div> -->
+</div>
+
+<div class="contact">
+  <div class="wrap-1490">
+
+    <!-- 联系地图 start-->
+    <a id="contact"></a>
+    <div class="MapInformation">
+      <div class="contactMap" aos="fade-up">
+        <div id="wrap" class="my-map">
+          <div id="mapContainer"></div>
+        </div>
+        <script src="https://webapi.amap.com/maps?v=1.3&key=6788948b1283617ad7a882614aa54fff"></script>
+        <script>
+        !function(){  //lang="cn", lang="en", 中英文地图切换
+          var infoWindow, map, level = 18, lang="zh_cn",
+            center = {lng: 113.960369, lat: 23.043693},
+            features = [{"icon":"cir","color":"blue","name":"东莞市金辉煌新能源科技有限公司","desc":"地址：东莞市横沥镇新四村三江工业区26号D栋","lnglat":{"Q":23.043693246193037,"R":113.96036928534505,"lng":113.960369,"lat":23.043693},"offset":{"x":-9,"y":-31},"type":"Marker"}];
+
+            function loadFeatures(){
+              for(var feature, data, i = 0, len = features.length, j, jl, path; i < len; i++){
+                data = features[i];
+                switch(data.type){
+                  case "Marker":
+                    feature = new AMap.Marker({ map: map, position: new AMap.LngLat(data.lnglat.lng, data.lnglat.lat),
+                      zIndex: 3, extData: data, offset: new AMap.Pixel(data.offset.x, data.offset.y), title: data.name,
+                      content: '<div class="icon icon-' + data.icon + ' icon-'+ data.icon +'-' + data.color +'"></div>' });
+                    break;
+                  case "Polyline":
+                   for(j = 0, jl = data.path.length, path = []; j < jl; j++){
+       							path.push(new AMap.LngLat(data.path[j].lng, data.path[j].lat));
+       						}
+                    feature = new AMap.Polyline({ map: map, path: path, extData: data, zIndex: 2,
+                      strokeWeight: data.strokeWeight, strokeColor: data.strokeColor, strokeOpacity: data.strokeOpacity });
+                    break;
+                  case "Polygon":
+                    for(j = 0, jl = data.path.length, path = []; j < jl; j++){
+                      path.push(new AMap.LngLat(data.path[j].lng, data.path[j].lat));
+                    }
+                    feature = new AMap.Polygon({ map: map, path: path, extData: data, zIndex: 1,
+                      strokeWeight: data.strokeWeight, strokeColor: data.strokeColor, strokeOpacity: data.strokeOpacity,
+                      fillColor: data.fillColor, fillOpacity: data.fillOpacity });
+                    break;
+                  default: feature = null;
+                }
+                if(feature){ AMap.event.addListener(feature, "click", mapFeatureClick); }
+              }
+            }
+
+            function mapFeatureClick(e){
+              if(!infoWindow){ infoWindow = new AMap.InfoWindow({autoMove: true,isCustom: false}); }
+              var extData = e.target.getExtData();
+              infoWindow.setContent("<div class='myinfowindow'><h5>" + extData.name + "</h5><div>" + extData.desc + "</div></div>");
+              infoWindow.open(map, e.lnglat);
+            }
+
+            map = new AMap.Map("mapContainer", {center: new AMap.LngLat(center.lng, center.lat), level: level, keyboardEnable:true, dragEnable:true, scrollWheel:true, doubleClickZoom:true});
+
+            loadFeatures();
+
+            map.on('complete', function(){
+              map.plugin(["AMap.ToolBar", "AMap.OverView", "AMap.Scale"], function(){
+                map.addControl(new AMap.ToolBar({ruler: true, direction: true, locate: false})); map.addControl(new AMap.OverView({isOpen: true})); map.addControl(new AMap.Scale);
+              });
+            })
+
+        	}();
+        </script>
+      </div>
+      <div class="Information">
+        <div aos="fade-right" aos-duration="900">
+          <div class="tit">联系我们</div>
+          <ul>
+            <li>公司地址：东莞市横沥镇新四村三江工业区26号D栋</li>
+            <li>联系电话：<a href="tel:13418866899">13418866899</a></li>
+            <li>电子邮箱：<a href="mailto:liangdesheng@163.comm">liangdesheng@163.com</a></li>
+          </ul>
+        </div>
+        <div aos="fade-left" aos-duration="1100">
+          <div class="lepowerCore">
+            <img class="logo" src="images/lepowerCore.png" alt="关注乐能公众号" />
+            <div class="Coretit">关注官网二维码</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- 联系地图 END-->
+
+    <!-- 在线留言 -->
+    <div class="ContactMessage">
+      <ul>
+        <form action="/index.html?m=guestbook&c=index&a=ajaxsave" name="myform" id="myform" method="post">
+          <div class="row">
+              <div class="col col6 sm-col12">
+                  <div class="tit"><span>* </span>姓名:</div>
+                  <input type="text" name="name" id="name">
+              </div>
+              <div class="col col6 rowRig sm-col12">
+                  <div class="tit"><span>* </span>邮箱:</div>
+                  <input type="text" id="email" name="email">
+              </div>
+          </div>
+          <div class="row">
+              <div class="col col6 sm-col12">
+                  <div class="tit"><span>* </span>电话:</div>
+                  <input type="text" name="shouji" id="shouji" >
+              </div>
+              <div class="col col6 rowRig sm-col12">
+                  <div class="tit"><span>* </span>地址:</div>
+                  <input type="text" name="address" id="address">
+              </div>
+          </div>
+          <div class="row">
+              <div class="col col12">
+                  <div class="tit"><span>* </span>留言内容:</div>
+                  <textarea name="introduce" id="introduce" placeholder="您想提出的建议或意见……"></textarea>
+              </div>
+          </div>
+          <div class="btn"><input type="button" onClick="submitliuyan();" value="立即提交"></div>
+        </form>
+      </ul>
+    </div>
+    <!-- 在线留言 end-->
+  </div>
+</div>
+
+<!--底部 start -->
+<div id="footer"></div>
+<!--底部 end -->
+<script type="text/javascript">
+  // $(function(){
+  //     $('#header').load('page/header.html')
+  //     $('#footer').load('page/footer.html')
+  // });
+  $(document).ready(function(){
+      $.ajaxSetup({
+          'beforeSend': function(xhr) {
+              xhr.overrideMimeType("text/plain; charset=UTF-8")
+          }
+      })
+      // 注意！页面引入需写在ajaxSetup加载完成后
+      $.get("page/header.html",function(data){
+          $("#header").html(data); 
+      });
+      $.get("page/footer.html",function(data){
+          $("#footer").html(data);
+      });
+  });
+</script>
+
+<script type="text/javascript" src="js/javascript2.js" charset="utf-8"></script>
+<script type="text/javascript" src="js/index.js" charset="utf-8"></script>
+<link rel="stylesheet" href="css/layer.css" type="text/css">
+<script type="text/javascript" src="js/layer.js"></script>
+<link rel="stylesheet" href="css/feeback.css" type="text/css" >
+<!-- 廉洁举报 -->
+<div class="layer-bg"></div>
+<div class="layer-box layer-service">
+    <span class="layer-close iconfont icon-close"></span>
+
+    <div class="ContactForm">
+      <div class="Box">
+          <form action="contact.html" class="form" name="myform" id="myform"  method="post">
+              <div class="lw-w-6 lw-sw-12 error">
+                <div class="tip">姓名: <span class="i"></span></div>
+                <input type="text" class="input" name="name" id="name">
+              </div>
+              <div class="lw-w-6 lw-sw-12 error">
+                <div class="tip">邮箱: <span class="i">*</span></div>
+                <input type="text" class="input" name="email" id="email" ismail errortips="Wrong mail format!" notemptry emptytips="Email is empty!">
+              </div>
+              <div class="lw-w-12 error">
+                  <div class="tip">举报内容: <span class="i">*</span></div>
+                  <textarea class="input" name="introduce" id="introduce" rows="4" notemptry emptytips="Message is empty!"></textarea>
+              </div>
+
+              <div class="other t-center">
+                <div class="btn-box" flex="aic jc">
+                  <div class="check-box" flex="aic jc">
+                    <input type="checkbox" class="check-btn" name="checkbox">
+                    <span class="self-svg" flex="jc aic" data-icon="check">
+                      <svg t="1649470953095" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"  width="200" height="200"><path d="M356.633486 866.60326a43.335582 43.335582 0 0 1-30.655697-12.70156L16.595837 544.519749a43.342807 43.342807 0 0 1 0-61.296945 43.328357 43.328357 0 0 1 61.30417 0L356.626261 761.949058l590.788683-590.795908a43.342807 43.342807 0 0 1 61.296945 0 43.335582 43.335582 0 0 1 0 61.30417l-621.437155 621.44438a43.277782 43.277782 0 0 1-30.641248 12.70156z" ></path></svg>
+                    </span>
+                    <span class="check-word">匿名举报</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="lw-w-12"><input type="button" class="submit" id="iconfont icon-linkedin" onClick="submitliuyan();" value="立即提交"></div>
+          </form>
+      </div>
+    </div>
+</div>
+
+<script>
+AOS.init({
+    easing: 'ease-out-back',
+    duration: 2000,
+    disable: window.innerWidth < 1200
+});
+$(document).ready(function(){
+  setTimeout(()=>{
+    $(window).scrollTop($(window).scrollTop() - 100);
+  },100)
+});
+</script>
+</body>
+</html>
