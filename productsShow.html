@@ -224,99 +224,13 @@
 </style>
 
 <!--产品咨询 弹窗begin-->
-<div class="feedback_bgs">&nbsp;</div>
+<div class="feedback_bgs"></div>
 <div class="feedback_box">
-	<div class="feedback_con">
-		<div class="feedtack_tt">
-			<h3 class="h3">产品咨询</h3>
-			<div class="p">提交您对产品的疑问，我们将在24小时内与您联系。</div>
-		</div>
-    <!-- <form action="productsShow.html?m=mianfei&c=index&a=ajaxsave" name="myform" id="myform" method="post"> -->
-		<form action="productsShow.html" name="myform" id="myform" method="post">
-  		<div class="divs"><input class="input_shurk" name="name" id="name" placeholder="姓名" /></div>
-  		<div class="divs"><input class="input_shurk" name="shouji" id="shouji" placeholder="电话" /></div>
-  		<div class="divs"><input class="input_shurk" name="email" id="email" placeholder="邮箱" /></div>
-      <div class="divs"><textarea class="textarea" name="introduce" id="introduce" rows="2" notemptry placeholder="咨询内容"></textarea></div>
-  		<div class="ends">
-  			<div class="o_more" onClick="submitxunjia()"><a href="javascript:0" class="seemore" title="立即提交"><span>立即提交</span></a></div>
-  		</div>
-  		<input type="hidden" name="siteid" value="1">
-  		<input type="hidden" name="title" value="产品标题">  <!--value="产品标题" 获取产品标题-->
-  		<input type="hidden" name="catname" value="Smart Bird Feeder">  <!--value="Smart Bird Feeder" 获取产品栏目标题-->
-  		<input type="hidden" name="token" value="6d36042e65815d4b55f0aa6e160952ca" id="token" >
-  		<input type="hidden" name="url" value="productsShow.html"> <!--value="productsShow.html" 获取当前产品id链接-->
-		</form>
+  <div class="feedback_con" style="max-width:700px;margin:0 auto;">
+    <img src="images/lianxifangshi1.jpg" alt="电话咨询/微信扫码" style="width:100%;display:block;border-radius:6px;">
   </div>
   <span class="feedback_box_close"><a href="javascript:;">×</a></span>
 </div>
-<script language="javascript">
-function showfeedback()
-  {
- 		 $(".feedback_bgs").fadeIn();
-		$(".feedback_box").addClass("showdiv");
-		 $(".touch_bg").slideUp();
-		 $(".top_ico").removeClass("on");
-		  $("body").addClass("pos");
-  }
- $(".feedback_box_close").click(function(){
-		$(".feedback_bgs").fadeOut();
-		$(".feedback_box").removeClass("showdiv");
-		 $("body").removeClass("pos");
-
-	})
-	$(".feedback_bgs").click(function(){
-		$(".feedback_bgs").fadeOut();
-		$(".feedback_box").removeClass("showdiv");
-		 $("body").removeClass("pos");
-	})
-</script>
-<link rel="stylesheet" href="css/layer.css" />
-<script type="text/javascript" src="js/layer.js">//弹窗组件</script>
-<script type="text/javascript">
-      function submitxunjia(){
-        if($('#name').val()==''){
-            layer.alert('请输入您的姓名', {icon: 0,title:'提示',btn:['提交']});  return false;
-        }
-        if($('#shouji').val()==''){
-            layer.alert('请输入您的电话', {icon: 0,title:'提示',btn:['提交']});  return false;
-        }
-	      if (!$.trim($('#shouji').val()).match( /^1[0-9]{10}$/)) {
-            layer.alert('请输入正确的电话号码', {icon: 0,title:'提示',btn:['提交']});  return false;
-        }
-        if($('#email').val()==''){
-            layer.alert('请输入您的邮箱', {icon: 0,title:'提示',btn:['提交']});  return false;
-        }
-        if (!$('#email').val().match(/^[\w\-\.]+@[\w\-\.]+(\.\w+)+$/)) {
-             layer.alert('请输入正确的电子邮箱', {icon: 0,title:'提示',btn:['提交']});  return false;
-        }
-        if($('#introduce').val()==''){
-            layer.alert('请输入您的产品咨询内容',{icon: 0,title:'提示',btn:['提交']}); return false;
-        }
-        $.ajax({
-            type: "POST",
-            url: $('#myform').attr('action'), //提交链接
-            data: $('#myform').serialize(),
-            dataType: "json",
-            success: function(data){
-              //alert(data); return false;
-              //if(data.success == true){
-              if(data.status==1){
-                  layer.alert(data.info, {icon: 1,title:'提示'});
-                  layer.alert(data.info,{
-                      icon: 1,
-                      title:'提示',
-                      btn:['提交']
-                  });
-                  setTimeout(function(){location.reload()},2000);
-              }
-              else{
-                  $('#code_img').click();
-                  layer.alert(data.info, {icon: 5,title:'提示'});
-              }
-            }
-          });
-        }
-</script>
 <!--产品咨询 弹窗end-->
 <script type="text/javascript" src="js/product.js" charset="utf-8"></script>
 <script type="text/javascript" src="js/javascript2.js" charset="utf-8"></script>
